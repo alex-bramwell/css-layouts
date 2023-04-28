@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap");
+
+body {
+  margin: 30px;
+  font-family: "Poppins";
+}
+
+.grid-container {
+  background-color: #eee;
+  max-width: 992px;
+  margin: 0 auto;
+  display: grid;
+
+  /* Basic calculation */
+  /* grid-template-columns: 330.6px 330.6px 330.6px; */
+
+  /* Grid Fractions */
+  grid-template-columns: repeat(3, 1fr);
+
+  /* This is targeting the first row */
+  grid-template-rows: 120px;
+
+  gap: 8px;
+
+  /* Move the columns to where you need - default is stretch */
+  /* justify-items: end; */
+  /* align-items: center; */
+}
+
+.grid-container > div {
+  background-color: #ccc;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #777;
+}
+
+.grid-container > div:nth-child(1) {
+  grid-column: 1 / span 2;
+}
+
+.grid-container > div:nth-child(2) {
+  grid-column: span 3;
+}
+
+/* This is automatic */
+.grid-container > div:nth-child(3) {
+  grid-column: span 1;
+}
+
+.grid-container > div:nth-child(4) {
+  grid-column: 2 / 6;
+}
